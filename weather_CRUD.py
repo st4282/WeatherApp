@@ -480,7 +480,7 @@ def export_data_menu():
         print("Invalid choice.")
         return
     
-    if success_count > 0:
+    if success_count == 0:
         print("\nExport failed.")
 
 
