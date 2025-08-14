@@ -1,4 +1,6 @@
 import requests
+import os
+from dotenv import load_dotenv
 
 from collections import defaultdict
 from flask import Flask, render_template, request, jsonify
@@ -6,7 +8,9 @@ from datetime import datetime, timezone
 
 app = Flask(__name__)
 
-API_KEY = "e269e838e12a130d3319afa425f20a8b"
+load_dotenv()
+
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 REVERSE_URL = "http://api.openweathermap.org/geo/1.0/reverse"
 ZIP_URL = "https://api.openweathermap.org/geo/1.0/zip"
