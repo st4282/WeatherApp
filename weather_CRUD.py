@@ -7,7 +7,11 @@ import json
 import csv
 import os
 
-API_KEY = "e269e838e12a130d3319afa425f20a8b"
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
